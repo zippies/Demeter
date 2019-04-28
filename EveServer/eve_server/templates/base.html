@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Needle-{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="/static/imgs/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bower_components/bootstrap-table/dist/bootstrap-table.css">
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+    <script src="/static/bower_components/layer/build/layer.js"></script>
+    {% block css %}
+    {% endblock %}
+    <style>
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+{% block script %}
+{% endblock %}
+</html>

@@ -1,0 +1,8 @@
+*.pyc
+.cache
+.idea
+__pycache__
+Adam/reports/*.html
+Adam/reports/screenshoots/*
+Adam/.pytest_cache
+Adam/env

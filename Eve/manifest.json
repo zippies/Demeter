@@ -1,0 +1,50 @@
+{
+	"manifest_version": 2,
+	"name": "Eve",
+	"version": "1.0",
+	"description": "Pick apple, feed Adam. used for web automation",
+	"icons": {
+		"128": "icons/eve_128.png",
+		"48": "icons/eve_48.png",
+		"16": "icons/eve_16.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [	// 当页面url被下面url_pattern匹配时，下列js和css文件才会被注入
+				"*://www.baidu.com/*"
+			],
+
+			"js": [
+				"source/jquery.min.js",
+				"source/jquery-smartMenu.js",
+				"source/layer.js",
+				"source/extend/layer.ext.js",
+				"source/bootstrap.min.js",
+				"source/nunjucks.js",
+				"source/bower_components/bootstrap-table/dist/bootstrap-table.js",
+				"source/lib/jquery.i18n.properties-1.0.9.js",
+				"Eve.js"
+			],
+
+			"css":[
+				"source/bootstrap.min.css",
+				"source/smartMenu.css",
+				"source/skin/layer.css",
+				"source/skin/layer.ext.css",
+				"source/bower_components/bootstrap-table/dist/bootstrap-table.css"
+			]
+		}
+	],
+
+	"browser_action": {		// 浏览器图标点击事件
+		"default_title": "Chrome Automation Extension — Eve",
+		"default_popup": "popup/controller.html"
+	},
+
+	"permissions": [
+		"https://eve.host/*",
+		"webRequest"
+	]
+
+}

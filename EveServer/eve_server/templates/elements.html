@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}elements{% endblock %}
+
+{% block script %}
+        <script src="/static/js/main.js"></script>
+{% endblock %}
+
+{% block body %}
+<div id="add-element" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">添加元素</h4>
+      </div>
+      <div class="modal-body">
+          <form action="/save?eve=true" method="post" id="add-form">
+
+            <div class="form-group">
+                <span>name</span>
+                <input type="text" class="form-control" name="elementname" placeholder="ElementName" onKeyUp="value=value.replace(/-/g,'_')">
+            </div>
+            <div class="form-group">
+                <span>findby</span>
+                <input type="text" class="form-control" name="elementname" value="xpath" placeholder="FindBy">
+            </div>
+            <div class="form-group">
+                <span>value</span>
+                <input type="text" class="form-control" name="xpath_value" placeholder="ElementValue">
+            </div>
+            <div class="form-group">
+                <span>pageurl</span>
+                <input type="text" class="form-control" name="url_value" placeholder="PageUrl">
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="add()" data-dismiss="modal">保存</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <div class="col-lg-12">
+        <div style="width:100%;text-align:center">
+            <h3>元素管理</h3>
+            <a href="javascript:;" data-toggle="modal" data-target="#add-element"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+        <span style="float:start"><button class="btn btn-xs btn-default" onclick="freshTable();layer.msg('刷新成功')">刷新</button></span>
+        <span style="float:right">当前元素个数:<code>{{ count }}</code>  使用率:<code>{{ percent }}%</code></span>
+        <table id="elementtable">
+        </table>
+    </div>
+
+
+    <div style="text-align:center;border-top:1px solid darkgray">
+       All Rights Reserved. chenzichaocc@163.com
+    </div>
+{% endblock %}

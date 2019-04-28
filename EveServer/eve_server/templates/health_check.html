@@ -1,0 +1,6 @@
+<div class="addon">
+    <h5 style="color:red" class="addon">【检测到页面已更新】下列元素找不到，请尽快修复</h5>
+    {% for ele in elements %}
+        <input type="text" class="addon" value="{{ ele.name }}" style="width:350px;">
+    {% endfor %}
+</div>
