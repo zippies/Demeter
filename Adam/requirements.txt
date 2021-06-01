@@ -16,5 +16,5 @@ scandir==1.8
 selenium==3.14.0
 six==1.11.0
 SQLAlchemy==1.2.10
-urllib3==1.23
+urllib3==1.26.5
 xmltodict==0.11.0
